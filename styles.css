@@ -1,0 +1,253 @@
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --v-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* fonts */
+
+    --round-font: 'Fraunces', serif;
+    --paragraph: 'Montserrat', sans-serif;
+}
+
+*,
+::before,
+:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--cream);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+
+}
+
+.product-container {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+
+.picture-product,
+.product-informations {
+    width: 100%;
+    height: 100%;
+}
+
+.picture-product {
+
+    background-image: url(images/image-product-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px 0 0 12px;
+}
+
+.product-informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10%;
+}
+
+.product-informations p,
+.previous-price {
+    color: var(--dark-grayish-blue);
+    font-family: var(--paragraph);
+}
+
+/* this is the p "PERFUME" */
+.category {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.product-description,
+.previous-price {
+    font-size: 14px;
+}
+
+.product-name,
+.actual-price {
+    font-family: var(--round-font);
+}
+
+/* product name */
+
+.product-name {
+    font-size: 1.99rem;
+    color: var(--dark-blue);
+}
+
+/* informations */
+
+.product-description {
+    line-height: 150%;
+}
+
+
+/* prices */
+
+.price-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.price-container .actual-price {
+    font-size: 1.7rem;
+    color: var(--dark-cyan);
+    margin-right: 15px;
+}
+
+.price-container .previous-price {
+    text-decoration: line-through;
+}
+
+.to-cart-btn {
+    display: flex;
+    gap: 4%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: var(--dark-cyan);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: var(--paragraph);
+    font-size: 11px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.to-cart-btn::before {
+    content: '';
+    background-image: url(images/icon-cart.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+
+}
+
+.to-cart-btn:hover {
+    background-color: hsl(140, 36%, 26%);
+}
+
+
+.attribution {
+    display: flex;
+    font-family: var(--paragraph);
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .product-container {
+        width: 350px;
+        height: 430px;
+    }
+
+    .picture-product {
+        background-position: center;
+    }
+
+    .product-informations {
+        text-align: center;
+        align-items: center;
+    }
+
+
+    .price-container .actual-price {
+        margin-right: 4px;
+        font-size: 1.2rem;
+    }
+
+    .product-description {
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+    }
+
+    .attribution {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+
+    body {
+        overflow: scroll;
+    }
+
+    main {
+        margin: 15% auto;
+
+    }
+
+    .product-container {
+        width: 90%;
+        min-height: 500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 210px 1fr;
+    }
+
+    .picture-product {
+        background-image: url(images/image-product-mobile.jpg);
+        background-size: cover;
+        background-position: top;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .product-informations {
+        padding: 5%;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+
+    }
+
+
+    .product-name {
+        font-size: 1.76rem;
+        color: var(--dark-blue);
+    }
+
+    .price-container .actual-price {
+        margin-right: 15px;
+        font-size: 1.6rem;
+    }
+
+    .product-description {
+        font-size: 12px;
+        line-height: 20px;
+        text-align: left;
+    }
+
+}
