@@ -56,7 +56,7 @@ main {
 
 .picture-product {
 
-    background-image: url(../images/image-product-desktop.jpg);
+    background-image: url(images/image-product-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 12px 0 0 12px;
@@ -219,7 +219,7 @@ main {
     }
 
     .picture-product {
-        background-image: url(../images/image-product-mobile.jpg);
+        background-image: url(images/image-product-mobile.jpg);
         background-size: cover;
         background-position: top;
         border-radius: 12px 12px 0 0;
